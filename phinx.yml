@@ -1,0 +1,13 @@
+paths:
+    migrations: %%PHINX_CONFIG_DIR%%/db/migrations
+    seeds: %%PHINX_CONFIG_DIR%%/db/seeds
+
+environments:
+    default_migration_table: phinxlog
+
+    development:
+        adapter: sqlite
+        name: call_forwarding.sqlite
+        charset: utf8
+
+version_order: creation

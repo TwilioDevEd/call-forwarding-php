@@ -9,7 +9,8 @@ class QueryBuilder
 
     public function __construct($tablename)
     {
-        $dbpath = __DIR__ . '/../call_forwarding.sqlite'; // dnspath hardcoded
+        $env = getenv('APP_ENV') === 'test' ? '_test' : '';
+        $dbpath = __DIR__ . "/../call_forwarding{$env}.sqlite";
 
         $this->pdo = new \PDO("sqlite:{$dbpath}");
         $this->query = "SELECT * FROM {$tablename}";

@@ -185,7 +185,8 @@ class CallCongress
     }
 }
 
-function url_for($request, $path) {
+function url_for($request, $path)
+{
     $protocol = $request->isSecure() ? 'https://' : 'http://';
     $host = $request->headers()->get('Host');
     return $protocol . $host . '/callcongress/' . $path;

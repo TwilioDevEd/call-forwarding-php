@@ -10,4 +10,9 @@ environments:
         name: call_forwarding.sqlite
         charset: utf8
 
+    test:
+        adapter: sqlite
+        name: call_forwarding_test.sqlite
+        charset: utf8
+
 version_order: creation

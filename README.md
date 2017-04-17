@@ -40,24 +40,17 @@ This project is built using PHP v5.6, and [SQLite](https://sqlite.org/index.html
 1. Install the dependencies with [Composer](https://getcomposer.org/).
 
    ```bash
-   composer install
+   composer install --dev
    ```
 
 1. Run the migrations.
 
    ```bash
-   ./bin/phinx migrate
+   make migration
    ```
 
-   This will create a file `call_forwarding.sqlite`.
-
-1. Run the seeders.
-
-   ```bash
-   ./bin/phinx seed:run
-   ```
-
-   This will load `senators.json` and US zip codes into your SQLite database.
+   This will load `senators.json` and US zip codes into your SQLite database,
+   in the root directory.
 
    **Please note:** Our senators dataset is likely outdated, and we've mapped
    senators to placeholder phone numbers that are set up with Twilio to read
@@ -88,6 +81,14 @@ This project is built using PHP v5.6, and [SQLite](https://sqlite.org/index.html
    Once ngrok is running, open up your browser and go to your ngrok URL.
 
 ### Run tests
+
+To run tests first you need to populate the test db
+
+```bash
+make tests_migration
+```
+
+After that you can run tests by simple writing
 
 ```bash
 make tests

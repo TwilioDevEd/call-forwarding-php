@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $command = sprintf(
     'php -S %s:%d -t %s >/dev/null 2>&1 & echo $!',

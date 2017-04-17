@@ -15,10 +15,12 @@ $k->respond($gp, path('goodbye'), handler('goodbye'));
 $k->dispatch();
 
 // Helper functions
-function path($path) {
+function path($path)
+{
     return "/callcongress/{$path}";
 }
 
-function handler($handler) {
+function handler($handler)
+{
     return ['\App\Controllers\CallCongress', $handler];
 }

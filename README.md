@@ -16,26 +16,9 @@ This project is built using PHP v5.6, and [SQLite](https://sqlite.org/index.html
 1. Clone this repository, and `cd` into it.
 
    ```bash
-   git clone https://github.com/TwilioDevEd/call-forwarding-php.git && cd call-forwarding-php
+   git clone https://github.com/TwilioDevEd/call-forwarding-php.git && \
+   cd call-forwarding-php
    ```
-
-1. Copy the sample configuration file and edit it to match your configuration.
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   You can find your `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` under
-   your [Twilio Account Settings](https://www.twilio.com/console).
-   You can buy Twilio phone numbers at
-   [Twilio numbers](https://www.twilio.com/console/phone-numbers)
-   `TWILIO_NUMBER` should be set to the phone number you purchased above.
-
-1. Load your environment variables.
-
-    ```bash
-    source .env
-    ```
 
 1. Install the dependencies with [Composer](https://getcomposer.org/).
 

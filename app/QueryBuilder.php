@@ -23,7 +23,7 @@ class QueryBuilder
         return new self($tablename);
     }
 
-    public function where($field, $op, $value)
+    public function where($field, $value, $op = '=')
     {
         if (is_string($value)) {
             $value = "'{$value}'";

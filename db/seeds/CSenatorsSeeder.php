@@ -22,7 +22,7 @@ class CSenatorsSeeder extends AbstractSeed
     private static function getStateByName($name)
     {
         return DB::fromTable('states')
-            ->where('name', '=', $name)
+            ->where('name', $name)
             ->first();
     }
 }

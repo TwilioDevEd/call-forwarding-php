@@ -1,6 +1,7 @@
 {
     "name": "TwilioDevEd/call-forwarding-php",
     "description": "Use Twilio to forward calls.",
+    "license": "MIT",
     "keywords": ["twilio", "call", "forward", "php"],
     "require": {
         "php": ">=5.6.4",

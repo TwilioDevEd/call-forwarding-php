@@ -66,11 +66,6 @@ function path($path)
     return "/callcongress/{$path}";
 }
 
-function handler($handler)
-{
-    return ['\App\Controllers\CallCongress', $handler];
-}
-
 function base_url($request)
 {
     $protocol = $request->isSecure() ? 'https://' : 'http://';

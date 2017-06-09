@@ -15,6 +15,7 @@ class BZipcodesSeeder extends AbstractSeed
                 'state_id' => $state['id']
             ];
         }, array_slice(array_map('str_getcsv', $zipcodes_csv), 1));
+        $this->table('zipcodes')->truncate();
         $this->table('zipcodes')->insert($zipcodes)->save();
     }
 

@@ -6,15 +6,15 @@ $k = new \Klein\Klein();
 $gp = ['GET', 'POST'];
 
 $k->respond('GET', '/', function($request, $response, $service) {
-  return $service->render(__DIR__ . '/views/index.html');
+    return $service->render(__DIR__ . '/views/index.html');
 });
 
 $k->respond('POST', path('welcome'), function($request, $response) {
-  $fromState = $request->param('FromState');
-  $twiml = CallCongress::welcome($fromState, base_url($request));
+    $fromState = $request->param('FromState');
+    $twiml = CallCongress::welcome($fromState, base_url($request));
 
-  $response->header('Content-Type', 'application/xml');
-  return $twiml;
+    $response->header('Content-Type', 'application/xml');
+    return $twiml;
 });
 
 $k->respond($gp, path('state-lookup'), function($request, $response) {
@@ -55,7 +55,7 @@ $k->respond($gp, path('call-second-senator'), function() {
 });
 
 $k->respond($gp, path('goodbye'), function() {
-  return CallCongress::goodbye();
+    return CallCongress::goodbye();
 });
 
 $k->dispatch();

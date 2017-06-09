@@ -2,20 +2,22 @@ default: help
 
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
-	@echo "  tests                  Executes the Unit tests"
-	@echo "  coverage               Creates the Coverage reports"
+	@echo "  migrate            Populate the database for development environment"
+	@echo "  start              Starts the web application on port 8000"
+	@echo "  test               Executes the unit tests"
 
-migration:
-	echo '' > call_forwarding.sqlite && \
-	./bin/phinx migrate && \
-	./bin/phinx seed:run
+migrate:
+	./vendor/bin/phinx migrate && \
+	./vendor/bin/phinx seed:run
 
-tests:
-	APP_ENV=test ./bin/phpunit
+migrate_test:
+	./vendor/bin/phinx migrate -e test && \
+	APP_ENV=test ./vendor/bin/phinx seed:run -e test
 
-tests_migration:
-	echo '' > call_forwarding_test.sqlite && \
-	./bin/phinx migrate -e test && \
-	APP_ENV=test ./bin/phinx seed:run -e test
+test:
+	./vendor/bin/phpunit
 
-.PHONY: tests coverage cs travis-tests
+start:
+	php -S localhost:8000
+
+.PHONY: migrate migrate_test test start

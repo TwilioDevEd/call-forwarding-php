@@ -1,6 +1,5 @@
 <?php
 
-use App\QueryBuilder as DB;
 use Phinx\Seed\AbstractSeed;
 
 class AStatesSeeder extends AbstractSeed
@@ -11,6 +10,7 @@ class AStatesSeeder extends AbstractSeed
         $states = array_map(function($state) {
           return ['name' => $state];
         }, json_decode($states_json, true));
+        $this->table('states')->truncate();
         $this->table('states')->insert($states)->save();
     }
 }

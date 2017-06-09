@@ -16,6 +16,7 @@ class CSenatorsSeeder extends AbstractSeed
                 'phone' => $senator['phone'],
             ];
         } , json_decode($senators_json, true));
+        $this->table('senators')->truncate();
         $this->table('senators')->insert($senators)->save();
     }
 

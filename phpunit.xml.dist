@@ -21,8 +21,9 @@
     </filter>
 
     <php>
-        <const name="WEB_SERVER_HOST" value="localhost" />
-        <const name="WEB_SERVER_PORT" value="8080" />
-        <const name="WEB_SERVER_DOCROOT" value="./" />
+        <env name="APP_ENV" value="test"/>
+        <const name="WEB_SERVER_HOST" value="localhost"/>
+        <const name="WEB_SERVER_PORT" value="8080"/>
+        <const name="WEB_SERVER_DOCROOT" value="./"/>
     </php>
 </phpunit>

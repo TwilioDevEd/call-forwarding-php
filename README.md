@@ -29,7 +29,7 @@ This project is built using PHP v5.6, and [SQLite](https://sqlite.org/index.html
 1. Run the migrations.
 
    ```bash
-   make migration
+   make migrate
    ```
 
    This will load `senators.json` and US zip codes into your SQLite database,
@@ -58,7 +58,7 @@ This project is built using PHP v5.6, and [SQLite](https://sqlite.org/index.html
 1. Start your development server.
 
    ```bash
-   php -S localhost:8080
+   make start
    ```
 
    Once ngrok is running, open up your browser and go to your ngrok URL.
@@ -67,14 +67,14 @@ This project is built using PHP v5.6, and [SQLite](https://sqlite.org/index.html
 
 To run tests first you need to populate the test db
 
-```bash
-make tests_migration
+ ```bash
+make migrate_test
 ```
 
 After that you can run tests by simple writing
 
 ```bash
-make tests
+make test
 ```
 
 ## Meta

@@ -1,5 +1,5 @@
 {
-    "name": "TwilioDevEd/call-forwarding-php",
+    "name": "twilio-deved/call-forwarding-php",
     "description": "Use Twilio to forward calls.",
     "license": "MIT",
     "keywords": ["twilio", "call", "forward", "php"],
